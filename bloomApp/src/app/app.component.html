@@ -1,0 +1,26 @@
+<ion-app>
+
+<ion-menu side="start" 
+menuId="first"
+contentId="principal">
+  <ion-header>
+    <ion-toolbar color="black">
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+    </ion-header>
+   <ion-content>
+     <ion-list>
+       <ion-item routerLink="/perfil"><ion-icon name="person"></ion-icon>Perfil</ion-item>
+       <ion-item routerLink="/galeria"><ion-icon name="images"></ion-icon>Galeria</ion-item>
+       <ion-item routerLink="/deseos"><ion-icon name="heart-empty"></ion-icon>Lista de deseos</ion-item>
+       <ion-item routerLink="/tiendas"><ion-icon name="pin"></ion-icon>Tiendas</ion-item>
+       <ion-item routerLink="/home"><ion-icon name="reorder"></ion-icon>Inicio</ion-item>
+
+     </ion-list>
+   </ion-content>
+
+</ion-menu>
+
+
+  <ion-router-outlet id="principal"></ion-router-outlet>
+</ion-app>

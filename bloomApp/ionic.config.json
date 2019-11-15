@@ -1,0 +1,7 @@
+{
+  "name": "bloomApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
