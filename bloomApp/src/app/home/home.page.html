@@ -1,39 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title center color="black"> <img class="icon" src="assets/bloom.png" style="align-items: center"> 
-    
+    <ion-title center color="black">
+      <img class="icon" src="assets/bloom.png" style="align-items: center">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
- 
-
   <ion-item>
-     <p>Iniciar Sesion</p> 
+    <h2>Iniciar Sesion</h2>
     <br>
-    <br>
-  
-  <ion-label position="floating">Correo Electronico</ion-label>
-  <ion-input type="text"  name="email"></ion-input>
-  
-</ion-item>
-<ion-item>
-  <ion-label position="floating">Contraseña</ion-label>
-  <ion-input   type="password" name="password"></ion-input>
-</ion-item>
-<br>
-
-
-
-
-
-<ion-button (click)="inicioSesion()" expand="block" color="dark" routerLink="/galeria">Entrar</ion-button>
-<ion-button  expand="full" color="light" routerLink="/resgistrarse">Registrarse</ion-button>
-
-
-
-
-
-
+    <ion-label position="floating">Correo Electronico</ion-label>
+    <ion-input [(ngModel)]="user.email" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button (click)="inicioSesion()" expand="block" color="dark">
+    Entrar
+  </ion-button>
+  <ion-button routerLink="/resgistrarse" expand="block" color="light">
+    Registrarse
+  </ion-button>
 </ion-content>

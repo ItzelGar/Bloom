@@ -1,42 +1,24 @@
 <ion-header>
   <ion-toolbar>
-   <ion-buttons slot="start">
-     <ion-back-button></ion-back-button>
-   </ion-buttons>
-
- 
-  
-    <ion-title center color="black"> <img class="icon" src="assets/bloom.png" style="align-items: center"> 
-    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title center color="black">
+      <img class="icon" src="assets/bloom.png" style="align-items: center">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content padding>
-  
-
   <ion-item>
-      
-  <ion-label position="floating">Correo Electronico</ion-label>
-  <ion-input type="text"  name="email"></ion-input>
-  
+    <ion-label position="floating">Correo Electronico</ion-label>
+    <ion-input [(ngModel)]="user.email" type="text"></ion-input>
   </ion-item>
   <ion-item>
-      
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="text"  name="password"></ion-input>
-      
-      </ion-item>
-      <ion-item>
-      
-          <ion-label position="floating">Repetir contraseña</ion-label>
-          <ion-input type="text"  name="repeat"></ion-input>
-          
-          </ion-item>
-
-  <ion-button  expand="full"  color="dark">Registrarse</ion-button>
-
-
-
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+  </ion-item>
+  <ion-button (click)="registrarse()" expand="block" color="dark">
+    Registrarse
+  </ion-button>
 </ion-content>
