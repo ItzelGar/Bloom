@@ -1,20 +1,17 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
-          </ion-buttons>
-      <ion-title><img class="icon" src="assets/bloom.png" style="align-items: center"> </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <h3>Eliminar producto</h3>
-    <ion-item>
-      <ion-label position="floating">Nombre:</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    
-    <ion-button expand="block" color="dark">Eliminar</ion-button>
-    
-   
-  </ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img class="icon" src="assets/bloom.png" style="align-items: center">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section *ngIf="(producto | async) as producto">
+    <h3>Eliminar {{producto.nombre}}?</h3>
+    <ion-button expand="block" color="dark" (click)="eliminarProducto(producto.id)">Eliminar</ion-button>
+  </section>
+</ion-content>

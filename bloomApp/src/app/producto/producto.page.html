@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img class="icon" src="assets/bloom.png" style="align-items: center">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section *ngIf="(producto | async) as producto">
+    <img class="imagen" [src]="'assets/' + producto.imagen">
+    <p>Nombre: {{producto.nombre}}</p>
+    <p>Precio: MXN{{producto.precio}}.00</p>
+    <p>Color: {{producto.color}}</p>
+    <p>Talla: {{producto.talla}}</p>
+    <p>Cantidad: {{producto.cantidad}}</p>
+    <section *ngIf="(esAdmin | async) as esAdmin">
+      <ion-button expand="full" color="dark" [routerLink]="'/modificar/' + producto.id">
+        Modificar {{producto.nombre}}
+      </ion-button>
+      <ion-button expand="full" color="dark" [routerLink]="'/eliminar/' + producto.id">
+        Eliminar {{producto.nombre}}
+      </ion-button>
+      <ion-button expand="full" color="dark" routerLink="/insertar">
+        Insertar producto nuevo
+      </ion-button>
+    </section>
+  </section>
+</ion-content>

@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Producto, ProductosService } from '../servicios/productos.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-galeria',
-  templateUrl: './galeria.page.html',
-  styleUrls: ['./galeria.page.scss'],
+  templateUrl: 'galeria.page.html',
+  styleUrls: ['galeria.page.scss'],
 })
-export class GaleriaPage implements OnInit {
+export class GaleriaPage {
+  productos: Observable<Producto[]>
 
-  constructor() { }
+  constructor(private ps: ProductosService) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.productos = this.ps.getProductos()
   }
-verImagen(){
-  alert('Usted ha seleccionado una imagen')
 
-}
-
+  verImagen() {
+    alert('Usted ha seleccionado una imagen')
+  }
 }
 
